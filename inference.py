@@ -11,8 +11,8 @@ import matplotlib.pyplot as plot
 import re
 
 class TestModel():
-    def __init__(self):
-        self.model = '/GFN/models/model_gfn.pkl'
+    def __init__(self, model):
+        self.model = model
         
     def predict(self, img_path):
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
@@ -41,4 +41,3 @@ class TestModel():
                 torch.cuda.synchronize()#wait for CPU & GPU time syn
                 resultSRDeblur = transforms.ToPILImage()(sr.cpu()[0])
                 resultSRDeblur.save(join(SR_dir, 'result.png'))
-
