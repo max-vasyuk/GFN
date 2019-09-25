@@ -12,13 +12,13 @@ import re
 
 class TestModel():
     def __init__(self):
-        self.model = '/models/model_gfn.pkl'
+        self.model = '/GFN/models/model_gfn.pkl'
         
     def predict(self, img_path):
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-        SR_dir = join(os.path.dirname(img_path), 'result')  #--------------------------SR results save path
+        SR_dir = join(os.path.dirname(img_path), 'result')
         if not os.path.exists(SR_dir):
             os.makedirs(SR_dir)
 
@@ -41,3 +41,4 @@ class TestModel():
                 torch.cuda.synchronize()#wait for CPU & GPU time syn
                 resultSRDeblur = transforms.ToPILImage()(sr.cpu()[0])
                 resultSRDeblur.save(join(SR_dir, 'result.png'))
+
