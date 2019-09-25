@@ -11,8 +11,8 @@ import matplotlib.pyplot as plot
 import re
 
 class TestModel():
-    def __init__(self, model):
-        self.model = model
+    def __init__(self):
+        self.model = '/models/model_gfn.pkl'
         
     def predict(self, img_path):
         os.environ['CUDA_VISIBLE_DEVICES'] = '0'
