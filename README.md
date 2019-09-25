@@ -7,12 +7,15 @@
 $git clone https://github.com/max-vasyuk/GFN.git
 $cd GFN
 ```
-2. Create class TestModel.
+2. Download the trained model ``model_gfn.pkl`` from [here](https://drive.google.com/open?id=1AC2t7f3-BMsDvWPsO2k4Sly9r4Pwtd9i) and move the model to ``GFN/models`` folder.
+
+3. Create class TestModel.
 ```bash
 tm = TestModel()
 ```
 
-3. Execute function of prediction for inference.
+4. Execute function of prediction for inference.
 ```bash
 tm.predict('test.jpeg')
 ```
+5. The result will be in the root with the input image in ``result/`` folder.
