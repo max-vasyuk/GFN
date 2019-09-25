@@ -11,7 +11,7 @@ $cd GFN
 
 3. Create class TestModel with path to model.
 ```bash
-tm = TestModel()
+tm = TestModel(*path_to_model*)
 ```
 
 4. Execute function of prediction for inference.
