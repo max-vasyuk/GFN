@@ -11,6 +11,7 @@ $cd GFN
 
 3. Create class TestModel with path to model.
 ```bash
+from inference import TestModel
 tm = TestModel(*path_to_model*)
 ```
 
